@@ -14,11 +14,14 @@ class DailyEdition(BaseModel):
     date: date
     top_story: Story
 
-class Article(BaseModel):
-    id: int
+class ArticleCreate(BaseModel):
+
     title: str
     content: str | None
     url: str
     published_at: datetime | None
     summary: str | None
     category: str | None
+
+class Article(ArticleCreate):
+    id: int
